@@ -494,7 +494,7 @@ python3 -m http.server 8000
                 <summary class="toggle-summary log-entry-head">
                   <span class="log-entry-copy">
                     <span class="panel-label">대화 블럭 08</span>
-                    <span class="log-entry-title">공개 도메인으로 접속 가능하게 하는 방법 정리</span>
+                    <span class="log-entry-title">공개 주소로 옮기기 위한 GitHub와 배포 흐름 압축 정리</span>
                   </span>
                   <span class="toggle-chip">
                     <span class="toggle-label-closed">블럭 열기</span>
@@ -506,17 +506,17 @@ python3 -m http.server 8000
                     <article class="summary-card">
                       <h3>요청사항</h3>
                       <ul class="summary-list">
-                        <li>이 사이트를 인터넷에서 누구나 접속 가능한 주소로 열고 싶기</li>
-                        <li>가능하면 내 도메인으로 접속되게 하고 싶기</li>
-                        <li>지금 만든 정적 버전과 React 버전 중 어떤 방식으로 배포하면 좋은지 알고 싶기</li>
+                        <li>만든 페이지를 공개 주소와 도메인으로 연결하는 전체 흐름을 한 번에 보고 싶기</li>
+                        <li>GitHub, Vercel, 도메인 연결이 어떤 순서로 이어지는지 큰 그림으로 이해하고 싶기</li>
+                        <li>세부 오류 사례보다 실제 진행 순서를 중심으로 정리하고 싶기</li>
                       </ul>
                     </article>
                     <article class="summary-card">
                       <h3>구현사항</h3>
                       <ul class="summary-list">
-                        <li>React 버전은 Vercel 같은 호스팅에 올리면 <code>*.vercel.app</code> 형태의 공개 주소를 바로 받을 수 있다고 안내</li>
-                        <li>정적 버전은 GitHub Pages, Netlify, Vercel 같은 정적 호스팅으로 공개 가능하다고 정리</li>
-                        <li>내 도메인을 쓰려면 호스팅 서비스에 도메인을 연결하고 DNS 레코드를 추가하는 흐름을 설명</li>
+                        <li>로컬에서 만든 페이지를 GitHub 저장소에 올리고, 그 저장소를 Vercel에 연결해 공개 주소를 만드는 흐름으로 압축</li>
+                        <li>저장소 생성, 원격 저장소 연결, push, 배포, 도메인 연결을 한 이야기로 묶어 이해하기 쉽게 정리</li>
+                        <li>작은 오류별 블럭은 지우고 실제로 공개 배포 준비가 완료된 지점까지의 큰 흐름만 남김</li>
                       </ul>
                     </article>
                   </div>
@@ -527,7 +527,7 @@ python3 -m http.server 8000
                 <summary class="toggle-summary log-entry-head">
                   <span class="log-entry-copy">
                     <span class="panel-label">대화 블럭 09</span>
-                    <span class="log-entry-title">GitHub 빈 저장소 생성 후 push 준비 단계 진행</span>
+                    <span class="log-entry-title">Git을 처음 배우는 기준으로 작업 흐름을 다시 설명</span>
                   </span>
                   <span class="toggle-chip">
                     <span class="toggle-label-closed">블럭 열기</span>
@@ -539,17 +539,17 @@ python3 -m http.server 8000
                     <article class="summary-card">
                       <h3>요청사항</h3>
                       <ul class="summary-list">
-                        <li>배포를 위해 GitHub 저장소를 먼저 만들고 현재 작업 폴더를 올리고 싶기</li>
-                        <li>빈 저장소를 만들어야 하는지, 그다음 무엇을 해야 하는지 알고 싶기</li>
-                        <li>저장소 이름은 <code>session-site</code>로 만들었고 이제 바로 다음 단계가 필요함</li>
+                        <li><code>repo</code>, <code>commit</code>, <code>push</code>, <code>pull</code> 같은 Git 기본 용어를 처음부터 이해하고 싶기</li>
+                        <li>지금까지 이 프로젝트에서 우리가 실제로 무엇을 했는지 순서대로 알고 싶기</li>
+                        <li>논의가 어떻게 이어져 현재의 파일 구조와 배포 준비 상태까지 왔는지 쉽게 설명받고 싶기</li>
                       </ul>
                     </article>
                     <article class="summary-card">
                       <h3>구현사항</h3>
                       <ul class="summary-list">
-                        <li>GitHub 빈 저장소를 먼저 만드는 흐름이 가장 충돌이 적다고 안내</li>
-                        <li>다음 단계는 저장소의 HTTPS 주소를 <code>origin</code>으로 연결한 뒤 <code>git push -u origin main</code> 하는 것이라고 정리</li>
-                        <li>인증 문제가 생기면 GitHub 비밀번호 대신 Personal Access Token을 써야 한다는 점을 함께 설명</li>
+                        <li>Git은 파일 변경 이력을 기록하는 도구, <code>repo</code>는 그 기록 상자, <code>push</code>와 <code>pull</code>은 내 컴퓨터와 GitHub 사이를 오가는 동작이라고 초보자 눈높이로 설명</li>
+                        <li>정적 페이지 제작, React 버전 분리, 폴더 재배치, 대화 기록 업데이트, GitHub 연결과 push 성공까지의 흐름을 순서대로 정리</li>
+                        <li>다음 단계는 Vercel 배포와 도메인 연결이라는 점까지 이어서 이해할 수 있게 설명</li>
                       </ul>
                     </article>
                   </div>
@@ -560,7 +560,7 @@ python3 -m http.server 8000
                 <summary class="toggle-summary log-entry-head">
                   <span class="log-entry-copy">
                     <span class="panel-label">대화 블럭 10</span>
-                    <span class="log-entry-title">GitHub 저장소 주소를 명령어처럼 입력했을 때의 오류 원인 설명</span>
+                    <span class="log-entry-title">앞으로 해야 하는 GitHub 반영과 Vercel 배포 순서 정리</span>
                   </span>
                   <span class="toggle-chip">
                     <span class="toggle-label-closed">블럭 열기</span>
@@ -572,48 +572,17 @@ python3 -m http.server 8000
                     <article class="summary-card">
                       <h3>요청사항</h3>
                       <ul class="summary-list">
-                        <li><code>zsh: no such file or directory: https://github.com/...</code> 오류가 왜 나는지 알고 싶기</li>
-                        <li>지금 단계에서 무엇을 입력해야 하는지 복붙 가능한 형태로 알고 싶기</li>
+                        <li>지금 이 폴더 상태에서 무엇을 먼저 하고, 그다음에 무엇을 해야 하는지 끝까지 알고 싶기</li>
+                        <li>GitHub에 다시 반영하는 과정과 Vercel에 배포하는 과정을 초보자 기준으로 이해하고 싶기</li>
+                        <li>도메인 연결까지 포함한 다음 단계 전체를 순서대로 보고 싶기</li>
                       </ul>
                     </article>
                     <article class="summary-card">
                       <h3>구현사항</h3>
                       <ul class="summary-list">
-                        <li>GitHub URL 자체는 명령어가 아니라 주소이므로 단독으로 입력하면 셸이 실행 파일처럼 해석해 오류가 난다고 설명</li>
-                        <li>현재 작업 폴더에는 아직 <code>origin</code> remote가 없으므로 <code>git remote add origin ...</code>부터 해야 한다고 정리</li>
-                        <li>바로 다음 단계는 커밋 후 <code>git push -u origin main</code> 이라고 안내</li>
-                      </ul>
-                    </article>
-                  </div>
-                </div>
-              </details>
-
-              <details class="log-entry toggle-block">
-                <summary class="toggle-summary log-entry-head">
-                  <span class="log-entry-copy">
-                    <span class="panel-label">대화 블럭 11</span>
-                    <span class="log-entry-title">GitHub 파일 크기 제한 때문에 push가 거절된 상황 정리</span>
-                  </span>
-                  <span class="toggle-chip">
-                    <span class="toggle-label-closed">블럭 열기</span>
-                    <span class="toggle-label-open">블럭 닫기</span>
-                  </span>
-                </summary>
-                <div class="log-content">
-                  <div class="log-grid">
-                    <article class="summary-card">
-                      <h3>요청사항</h3>
-                      <ul class="summary-list">
-                        <li>원격 저장소를 받아온 뒤 정상적으로 push를 끝내고 싶기</li>
-                        <li>GitHub가 large file 오류를 낸 이유와 해결 방법을 알고 싶기</li>
-                      </ul>
-                    </article>
-                    <article class="summary-card">
-                      <h3>구현사항</h3>
-                      <ul class="summary-list">
-                        <li>원격의 기본 README와 충돌한 부분은 로컬 README 기준으로 정리해 rebase 완료</li>
-                        <li><code>tools/node-v24.14.1-darwin-arm64/bin/node</code> 파일이 100MB 제한을 넘어 push가 거절된 원인을 확인</li>
-                        <li>로컬 실행용 <code>tools/</code> 폴더는 Git 추적에서 제외하고 히스토리를 다시 정리한 뒤 push하도록 수정</li>
+                        <li>현재 수정된 파일과 아직 GitHub에 안 올라간 상태를 확인한 뒤, 먼저 <code>git status</code>를 보고 올릴 파일을 결정하는 흐름으로 정리</li>
+                        <li>그다음 <code>git add</code>, <code>git commit</code>, <code>git push</code>로 GitHub 반영을 끝내고, Vercel에서 저장소를 불러와 React 폴더를 배포하는 순서로 설명</li>
+                        <li>마지막에는 Vercel 기본 주소 확인 후 커스텀 도메인을 연결하고 DNS가 반영될 때까지 기다리는 단계까지 한 번에 이어서 정리</li>
                       </ul>
                     </article>
                   </div>
