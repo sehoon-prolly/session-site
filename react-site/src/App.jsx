@@ -209,6 +209,20 @@ const logEntries = [
       '마지막에는 Vercel 기본 주소 확인 후 커스텀 도메인을 연결하고 DNS가 반영될 때까지 기다리는 단계까지 한 번에 이어서 정리',
     ],
   },
+  {
+    block: '대화 블럭 11',
+    title: 'Vercel에서 session-site를 import하는 실제 순서 설명',
+    request: [
+      'session-site를 Vercel에서 import하라는 말이 정확히 무슨 뜻인지 알고 싶기',
+      '실제로 어느 버튼을 누르고 어떤 설정을 고르면 되는지 클릭 순서대로 알고 싶기',
+      '배포 뒤 공개 주소 확인과 도메인 연결까지 한 흐름으로 이해하고 싶기',
+    ],
+    implementation: [
+      'Vercel의 New Project에서 GitHub 저장소 session-site를 선택하는 것이 import라는 점으로 설명',
+      'React 버전은 Root Directory를 react-site로 고르고 배포하면 된다고 구체적으로 정리',
+      '배포 후 *.vercel.app 주소 확인, 이후 Settings > Domains에서 내 도메인을 추가하는 흐름까지 이어서 설명',
+    ],
+  },
 ]
 
 const summaryChecklist = [
