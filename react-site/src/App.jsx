@@ -223,6 +223,32 @@ const logEntries = [
       '배포 후 *.vercel.app 주소 확인, 이후 Settings > Domains에서 내 도메인을 추가하는 흐름까지 이어서 설명',
     ],
   },
+  {
+    block: '대화 블럭 12',
+    title: 'Framework Preset이 Others로 보일 때 해석하는 방법',
+    request: [
+      'Vercel 설정 화면에서 Framework Preset이 Others로 보이는 이유를 알고 싶기',
+      '이 상태가 문제인지, 무엇으로 바꿔야 하는지 바로 판단하고 싶기',
+    ],
+    implementation: [
+      '현재 저장소의 실제 Vite 앱은 루트가 아니라 react-site/ 아래에 있어서 자동 감지가 늦을 수 있다고 설명',
+      '이 프로젝트는 vite, @vitejs/plugin-react, vite build 설정을 갖고 있으므로 배포 대상은 분명히 Vite 앱이라고 정리',
+      '가장 안전한 선택은 Root Directory를 react-site로 맞춘 뒤 프리셋을 Vite로 수동 선택하는 것이라고 안내',
+    ],
+  },
+  {
+    block: '대화 블럭 13',
+    title: 'Vercel 설정 화면에서 실제로 눌러야 할 항목 정리',
+    request: [
+      'Vercel 설정 화면에서 어떤 항목을 바꾸고 어떤 값으로 두면 되는지 구체적으로 알고 싶기',
+      'GitHub 반영부터 배포 버튼을 누르기 전까지의 행동을 바로 따라 하고 싶기',
+    ],
+    implementation: [
+      '먼저 git add, git commit, git push로 최신 수정사항을 GitHub에 올린 뒤 Vercel에 들어가야 한다고 정리',
+      'Vercel에서는 session-site 저장소 선택 후 Root Directory = react-site, Framework Preset = Vite로 맞추는 흐름으로 설명',
+      'Build Command = npm run build, Output Directory = dist를 확인하고 Deploy를 누른 뒤 공개 주소를 확인하는 단계까지 이어서 정리',
+    ],
+  },
 ]
 
 const summaryChecklist = [
